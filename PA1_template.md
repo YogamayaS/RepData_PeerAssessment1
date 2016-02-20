@@ -2,7 +2,7 @@
 
 
 ## Loading and preprocessing the data
-The data was downloaded from the website - https://d396qusza40orc.cloudfront.net/repdata%2Fdata%2Factivity.zip on 2/17/2016. The file "activity.csv" contains the data for this project. The file contains 17,568 observations and contains the following variables:
+The file "activity.csv" contains the data for this project. The file contains 17,568 observations and contains the following variables:
 *steps: Number of steps taking in a 5-minute interval (missing values are coded as NA)
 *date: The date on which the measurement was taken in YYYY-MM-DD format
 *interval: Identifier for the 5-minute interval in which measurement was taken
