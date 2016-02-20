@@ -2,7 +2,8 @@
 title: "Reproducible Research: Peer Assessment 1"
 output: 
   html_document:
-    keep_md: true
+    fig_caption: yes
+    keep_md: yes
 ---
 
 
@@ -12,10 +13,12 @@ The data was downloaded from the website - https://d396qusza40orc.cloudfront.net
 *date: The date on which the measurement was taken in YYYY-MM-DD format
 *interval: Identifier for the 5-minute interval in which measurement was taken
 
+
 ###Loading the data
 
 ```{r} 
         # Load the data
+        unzip(zipfile = "activity.zip")
         activity_data <- read.csv("activity.csv", header = TRUE)
 
 ```

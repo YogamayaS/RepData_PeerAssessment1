@@ -7,11 +7,21 @@ The data was downloaded from the website - https://d396qusza40orc.cloudfront.net
 *date: The date on which the measurement was taken in YYYY-MM-DD format
 *interval: Identifier for the 5-minute interval in which measurement was taken
 
+
 ###Loading the data
 
 
 ```r
         # Load the data
+        unzip(zipfile = "activity.zip")
+```
+
+```
+## Warning in unzip(zipfile = "activity.zip"): error 1 in extracting from zip
+## file
+```
+
+```r
         activity_data <- read.csv("activity.csv", header = TRUE)
 ```
 
@@ -75,7 +85,7 @@ The data was downloaded from the website - https://d396qusza40orc.cloudfront.net
         hist(steps_by_day$steps, xlab = "Steps", ylab = "Days", main = "Total Steps By Days",col="green")
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-4-1.png)
+![](PA1_template_files/figure-html/unnamed-chunk-4-1.png)<!-- -->
 
 
 ###Mean of Total Steps Taken Per Day
@@ -115,7 +125,7 @@ The data was downloaded from the website - https://d396qusza40orc.cloudfront.net
         plot(average_steps_by_interval$interval, average_steps_by_interval$avgSteps, type = "l", main = "Average  Steps per Five Minute Interval", xlab = "Interval",ylab = "Steps" )
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-7-1.png)
+![](PA1_template_files/figure-html/unnamed-chunk-7-1.png)<!-- -->
 
 ## Imputing missing values
 ###Calculate and report the total number of missing values in the dataset
@@ -159,7 +169,7 @@ My strategy will be to use the mean for the 5- minute interval that was calculat
         hist(no_NA_steps_by_day$steps, xlab = "Steps", ylab = "Days", main = "Steps By Days",col="blue")     
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-10-1.png)
+![](PA1_template_files/figure-html/unnamed-chunk-10-1.png)<!-- -->
 ###Calculate the mean and median total number of steps taken per day after inserting missing data
 
 ```r
@@ -211,6 +221,6 @@ Inserting the missing data returns in the same value for both the mean and the m
        ylab="Average Steps", xlab="Interval")
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-14-1.png)
+![](PA1_template_files/figure-html/unnamed-chunk-14-1.png)<!-- -->
  
 ###The average steps taken is more during the weekend when compared with the steps taken during the weekday. There is less fluctuation in the average steps taken during the weekend when compared with the average steps taken during th weekday.
